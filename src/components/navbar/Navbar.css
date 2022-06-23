@@ -1,0 +1,90 @@
+@keyframes fill {
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    50% {
+      width: 90%;
+      height: 1px;
+    }
+    100% {
+      width: 100%;
+      height: 90%;
+      background: #333;
+    }
+}
+
+.navbar {
+  width: auto;
+  height: 100px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: absolute;
+}
+
+.navbarImage {
+  height: 50px;
+  width: 120px;
+  padding-top: 15px;
+}
+
+.navbarLink {
+  font-size: 20px;
+  text-decoration: none;
+  padding: 35px;
+  position: relative;
+}
+
+.navbarLink:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+
+.navbarLink{
+    transition: all 2s;
+}
+
+.navbarLink:after{
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+}
+
+.navbarLink:hover{
+    color: #fff;
+    z-index: 1;
+}
+
+.navbarLink:hover::after{
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+}
+
+.right {
+  position: relative;
+  left: 100px;
+  top: 15px;
+}
+
+.left {
+  position: relative;
+  right: 100px;
+  top: 15px;
+}
